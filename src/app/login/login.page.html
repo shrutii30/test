@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!user">
+    
+    <ion-button (click)="signInWithGoogle()">
+      <ion-icon name="logo-google"></ion-icon>Sign In
+    </ion-button>
+  </div>
+
+  <div *ngIf="user">
+    <img src="{{user.photoUrl}}"/>
+    Name: {{user.name}}
+    Email: {{user.email}}
+    
+    <ion-button (click)="signOut()" color="danger">
+      <ion-icon name="logo-google"></ion-icon> Sign Out
+    </ion-button>
+  </div>
+</ion-content>
